@@ -2,4 +2,4 @@
 
 MOVIE=("HIT3" "PUSHPA" "RETRO")
 
-echo "$(MOVIE[2])"
+echo " ${MOVIE[2]}"
