@@ -1,7 +1,7 @@
 #!/bin/bash
 
 NUMBER1=100
-NUMNER2=200
+NUMBER2=200
 
 SUM=$(($NUMBER1+$NUMBER2))
 TIME=$(date)
