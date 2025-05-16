@@ -2,7 +2,7 @@
 
 #conditional statements in bash
 
-USERID=$(id-u)
+USERID=$(id -u)
 
 if [ $? -ne 0]
 then
