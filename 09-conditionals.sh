@@ -2,11 +2,24 @@
 
 #conditional statements in bash
 
-NUMBER=$1
+USERID=$(id-u)
 
-if [ $NUMBER -lt 10 ]
+if [ $? -ne 0]
 then
-    echo "The number is less than 10"
+    echo "The user doesnt have root access"
+    exit(1)
 else
-    echo "The number is greater than 10"
+    echo "The user has root axit can procceed for installation"
 fi
+
+dnf install mysql -y
+
+if [ $? -ne 0 ]
+then
+    echo "installation is a success"
+else
+    echo "Failure"
+fi
+
+
+
