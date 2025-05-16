@@ -12,15 +12,22 @@ else
     echo "The user has root axit can procceed for installation"
 fi
 
-dnf install mysql -y
-
+SERVICE=$1
+dnf list installed $SERVICE
 if [ $? -ne 0 ]
-then
-    echo "installation is a success"
+then 
+    dnf install $SERVICE -y
+    if [ $? -eq 0 ]
+    then
+        echo "installation is a success"
+    else
+        echo "Failure"
+        exit 1
+    fi
 else
-    echo "Failure"
-    exit 1
+    echo "Alrady installed nth to do"
 fi
+
 
 
 
