@@ -7,7 +7,7 @@ USERID=$(id -u)
 if [ $? -ne 0 ]
 then
     echo "The user doesnt have root access"
-    exit(1)
+    exit 1
 else
     echo "The user has root axit can procceed for installation"
 fi
@@ -19,6 +19,7 @@ then
     echo "installation is a success"
 else
     echo "Failure"
+    exit 1
 fi
 
 
