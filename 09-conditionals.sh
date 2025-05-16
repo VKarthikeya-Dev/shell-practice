@@ -4,7 +4,7 @@
 
 USERID=$(id -u)
 
-if [ $? -ne 0 ]
+if [ $USERID -ne 0 ]
 then
     echo "The user doesnt have root access"
     exit 1
