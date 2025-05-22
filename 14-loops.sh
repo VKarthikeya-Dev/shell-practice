@@ -44,6 +44,7 @@ then
 else
     echo -e "$Y Alrady installed nth to do $N" | tee -a $LOG_FILE
 fi
+done
 
 
 
