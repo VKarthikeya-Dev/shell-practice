@@ -19,18 +19,18 @@ N="\e[0m"
 
 if [ $USERID -ne 0 ]
 then
-    echo "$R The user doesnt have root access $N"
+    echo -e "$R The user doesnt have root access $N"
     exit 1
 else
-    echo "$G The user has root axit can procceed for installation $N"
+    echo -e "$G The user has root axit can procceed for installation $N"
 fi
 
 VALIDATE(){
     if [ $1 -eq 0 ]
     then
-        echo "$G $2 installation is a success $N"
+        echo -e"$G $2 installation is a success $N"
     else
-        echo "$R Failure in installing $2 $N"
+        echo -e"$R Failure in installing $2 $N"
         exit 1
     fi
 }
@@ -42,7 +42,7 @@ then
     dnf install $SERVICE -y
     VALIDATE $? $SERVICE
 else
-    echo "$Y Alrady installed nth to do $N"
+    echo -e"$Y Alrady installed nth to do $N"
 fi
 
 
