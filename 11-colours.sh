@@ -42,7 +42,7 @@ then
     dnf install $SERVICE -y
     VALIDATE $? $SERVICE
 else
-    echo -e"$Y Alrady installed nth to do $N"
+    echo -e "$Y Alrady installed nth to do $N"
 fi
 
 
