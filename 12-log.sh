@@ -12,25 +12,24 @@ LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p $LOG_FOLDER
  
-echo "The script started execution at $(date)" &>>$LOG_FILE
+echo "The script started execution at $(date)" | tee -a $LOG_FILE
 
 
 
 if [ $USERID -ne 0 ]
 then
-    echo -e "$R The user doesnt have root access $N" &>>$LOG_FILE
+    echo -e "$R The user doesnt have root access $N" | tee -a $LOG_FILE
     exit 1
 else
-    echo -e "$G The user has root axit can procceed for installation $N" &>>$LOG_FILE
+    echo -e "$G The user has root axit can procceed for installation $N" | tee -a $LOG_FILE
 fi
 
 VALIDATE(){
     if [ $1 -eq 0 ]
     then
-        echo -e "$G $2 installation is a success $N" &>>$LOG_FILE
+        echo -e "$G $2 installation is a success $N" | tee -a $LOG_FILE
     else
-        echo -e "$R Failure in installing $2 $N" &>>$LOG_FILE
-        exit 1
+        echo -e "$R Failure in installing $2 $N"| tee -a $LOG_FILE
     fi
 }
 
@@ -41,7 +40,7 @@ then
     dnf install $SERVICE -y &>>$LOG_FILE
     VALIDATE $? $SERVICE  
 else
-    echo -e "$Y Alrady installed nth to do $N" &>>$LOG_FILE
+    echo -e "$Y Alrady installed nth to do $N" | tee -a $LOG_FILE
 fi
 
 
