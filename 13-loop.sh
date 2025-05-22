@@ -7,5 +7,5 @@
 
 for i in {1..100}
 do 
-    echo $($i+2)
+    echo $(($i+2))
 done
